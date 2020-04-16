@@ -17,7 +17,7 @@ class ApiController extends Controller
             echo "密码不一致";die;
         }
         
-        $url='http://'.env('PASSPROT').'/api/reg';
+        $url=env('PASSPROT').'/api/reg';
         
         $client=new client();
         $response=$client->request('POST',$url,[
@@ -35,7 +35,7 @@ class ApiController extends Controller
     public function apiLogin(Request $Request)
     {
         $data=$Request->input();
-        $url='http://'.env('PASSPROT').'/api/login';
+        $url=env('PASSPROT').'/api/login';
         
         $client=new client();
         $response=$client->request('POST',$url,[
